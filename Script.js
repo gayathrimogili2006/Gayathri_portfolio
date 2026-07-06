@@ -1,44 +1,11 @@
-const words = [
-"Software Developer",
-"C Programmer",
-"Python Developer",
-"Web Developer",
-"Full Stack Learner"
-];
+const btn = document.getElementById("darkMode");
 
-let i = 0;
-let j = 0;
-let current = "";
-let isDeleting = false;
+btn.onclick = () => {
+    document.body.classList.toggle("dark");
 
-function type(){
-
-current = words[i];
-
-if(!isDeleting){
-j++;
-}else{
-j--;
-}
-
-document.getElementById("typing").innerHTML=current.substring(0,j);
-
-if(!isDeleting && j==current.length){
-isDeleting=true;
-setTimeout(type,1000);
-return;
-}
-
-if(isDeleting && j==0){
-isDeleting=false;
-i++;
-
-if(i==words.length)
-i=0;
-}
-
-setTimeout(type,isDeleting?60:120);
-
-}
-
-type();
+    if(document.body.classList.contains("dark")){
+        btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }else{
+        btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    }
+};
