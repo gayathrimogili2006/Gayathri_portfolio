@@ -1,640 +1,1001 @@
-/* ===============================
+```css
+/* =====================================================
    GLOBAL SETTINGS
-================================ */
+===================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    text-decoration:none;
-    border:none;
-    outline:none;
-    scroll-behavior:smooth;
-    font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    border: none;
+    outline: none;
+
+    scroll-behavior: smooth;
+
+    font-family: 'Poppins', sans-serif;
 }
 
 
-:root{
-    --bg-color:#081b29;
-    --second-bg:#112e42;
-    --text-color:#ededed;
-    --main-color:#00eeff;
+:root {
+
+    --bg-color: #081b29;
+
+    --second-bg: #112e42;
+
+    --text-color: #ededed;
+
+    --main-color: #00eeff;
+
 }
 
 
-html{
-    font-size:62.5%;
-    overflow-x:hidden;
+/* =====================================================
+   HTML
+===================================================== */
+
+html {
+
+    font-size: 62.5%;
+
+    overflow-x: hidden;
+
 }
 
 
-body{
+/* =====================================================
+   BODY - ANIMATED BACKGROUND
+===================================================== */
+
+body {
+
+    color: var(--text-color);
 
     background:
-    linear-gradient(
-        135deg,
-        #081b29,
-        #112e42,
-        #001f3f
-    );
 
-    background-size:400% 400%;
-    animation:bgAnimation 12s infinite alternate;
+        linear-gradient(
 
-    color:var(--text-color);
+            135deg,
+
+            #081b29,
+
+            #112e42,
+
+            #001f3f,
+
+            #081b29
+
+        );
+
+    background-size: 400% 400%;
+
+    animation: bgAnimation 12s ease infinite;
 
 }
 
 
-@keyframes bgAnimation{
+/* =====================================================
+   BACKGROUND ANIMATION
+===================================================== */
 
-    0%{
-        background-position:left top;
+@keyframes bgAnimation {
+
+    0% {
+
+        background-position: 0% 50%;
+
     }
 
-    100%{
-        background-position:right bottom;
+
+    50% {
+
+        background-position: 100% 50%;
+
+    }
+
+
+    100% {
+
+        background-position: 0% 50%;
+
     }
 
 }
 
 
+/* =====================================================
+   SECTIONS
+===================================================== */
 
-section{
+section {
 
-    min-height:100vh;
-    padding:10rem 9% 2rem;
+    min-height: 100vh;
 
-}
-
-
-/* ================= HEADER ================= */
-
-
-.header{
-
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-
-    padding:2rem 9%;
-
-    background:rgba(8,27,41,0.7);
-
-    backdrop-filter:blur(15px);
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    z-index:1000;
+    padding: 10rem 9% 2rem;
 
 }
 
 
+/* =====================================================
+   SCROLL REVEAL EFFECT
+===================================================== */
 
-.logo{
+section {
 
-    font-size:3rem;
-    color:white;
-    font-weight:700;
+    opacity: 0;
 
-}
+    transform: translateY(50px);
 
-
-
-.logo span{
-
-    color:var(--main-color);
+    transition: opacity 1s ease,
+                transform 1s ease;
 
 }
 
 
+section.show {
 
-.navbar a{
+    opacity: 1;
 
-    font-size:1.7rem;
-    color:white;
-    margin-left:3rem;
-    transition:.3s;
+    transform: translateY(0);
 
 }
 
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 2rem 9%;
+
+    background: rgba(8, 27, 41, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 1000;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+
+    font-size: 3rem;
+
+    color: white;
+
+    font-weight: 700;
+
+}
+
+
+.logo span {
+
+    color: var(--main-color);
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar a {
+
+    font-size: 1.7rem;
+
+    color: white;
+
+    margin-left: 3rem;
+
+    transition: 0.3s;
+
+}
 
 
 .navbar a:hover,
-.navbar .active{
 
-    color:var(--main-color);
+.navbar a.active {
 
-}
-
-
-
-#menu-icon{
-
-    font-size:3.5rem;
-    display:none;
-}
-
-
-
-/* ================= HOME ================= */
-
-
-.home{
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:3rem;
+    color: var(--main-color);
 
 }
 
 
+/* =====================================================
+   MENU ICON
+===================================================== */
 
-.home-content{
+#menu-icon {
 
-    max-width:600px;
+    font-size: 3.5rem;
 
-}
+    color: var(--text-color);
 
+    display: none;
 
-
-.home-content h3{
-
-    font-size:3rem;
-
-}
-
-
-
-.home-content h1{
-
-    font-size:5rem;
-    color:white;
+    cursor: pointer;
 
 }
 
 
+/* =====================================================
+   HOME SECTION
+===================================================== */
 
-.home-content span{
+.home {
 
-    color:var(--main-color);
+    display: flex;
 
-}
+    align-items: center;
 
+    justify-content: space-between;
 
-
-.home-content p{
-
-    font-size:1.7rem;
-    margin:2rem 0;
-
-    line-height:1.7;
+    gap: 3rem;
 
 }
 
 
+/* =====================================================
+   HOME CONTENT
+===================================================== */
+
+.home-content {
+
+    max-width: 600px;
+
+}
 
 
-/* IMAGE */
+.home-content h3 {
+
+    font-size: 3rem;
+
+}
 
 
-.home-image img{
+.home-content h1 {
 
-    width:350px;
-    height:350px;
+    font-size: 5rem;
 
-    border-radius:50%;
+    color: white;
 
-    object-fit:cover;
+    line-height: 1.2;
 
-    border:5px solid var(--main-color);
+}
+
+
+.home-content span {
+
+    color: var(--main-color);
+
+}
+
+
+.home-content p {
+
+    font-size: 1.7rem;
+
+    margin: 2rem 0;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
+
+.home-image img {
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 5px solid var(--main-color);
 
     box-shadow:
 
-    0 0 25px var(--main-color),
-    0 0 50px var(--main-color);
+        0 0 25px var(--main-color),
 
-    animation:float 4s ease-in-out infinite;
+        0 0 50px var(--main-color);
+
+    animation: float 4s ease-in-out infinite;
 
 }
 
 
+/* =====================================================
+   FLOATING ANIMATION
+===================================================== */
 
-@keyframes float{
+@keyframes float {
 
-    0%,100%{
-        transform:translateY(0);
+    0%,
+
+    100% {
+
+        transform: translateY(0);
+
     }
 
-    50%{
-        transform:translateY(-20px);
+
+    50% {
+
+        transform: translateY(-20px);
+
     }
 
 }
 
 
+/* =====================================================
+   BUTTONS
+===================================================== */
 
-/* BUTTON */
+.btn {
 
+    display: inline-block;
 
-.btn{
+    padding: 1.2rem 3rem;
 
-    display:inline-block;
+    background: var(--main-color);
 
-    padding:1.2rem 3rem;
+    color: #081b29;
 
-    background:var(--main-color);
+    border-radius: 3rem;
 
-    color:#081b29;
+    font-size: 1.6rem;
 
-    border-radius:3rem;
+    font-weight: 600;
 
-    font-size:1.6rem;
+    margin-top: 2rem;
 
-    font-weight:600;
+    box-shadow: 0 0 20px var(--main-color);
 
-    margin-top:2rem;
-
-    box-shadow:0 0 20px var(--main-color);
-
-    transition:.3s;
-
-}
-
-
-
-.btn:hover{
-
-    transform:scale(1.1);
+    transition: 0.3s;
 
 }
 
 
+.btn:hover {
 
-/* SOCIAL ICONS */
+    transform: scale(1.1);
 
+    box-shadow:
 
-.social-icons a{
+        0 0 25px var(--main-color),
 
-    display:inline-flex;
-
-    justify-content:center;
-    align-items:center;
-
-    width:45px;
-    height:45px;
-
-    background:transparent;
-
-    border:2px solid var(--main-color);
-
-    border-radius:50%;
-
-    color:var(--main-color);
-
-    font-size:2rem;
-
-    margin-right:1rem;
-
-    transition:.3s;
+        0 0 50px var(--main-color);
 
 }
 
 
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
 
-.social-icons a:hover{
+.social-icons {
 
-    background:var(--main-color);
-
-    color:#081b29;
-
-    box-shadow:0 0 20px var(--main-color);
-
-}
-
-
-
-/* ================= HEADINGS ================= */
-
-
-.heading{
-
-    text-align:center;
-
-    font-size:4.5rem;
-
-    margin-bottom:5rem;
+    margin-top: 2rem;
 
 }
 
 
+.social-icons a {
 
-.heading span{
+    display: inline-flex;
 
-    color:var(--main-color);
+    justify-content: center;
+
+    align-items: center;
+
+    width: 45px;
+
+    height: 45px;
+
+    background: transparent;
+
+    border: 2px solid var(--main-color);
+
+    border-radius: 50%;
+
+    color: var(--main-color);
+
+    font-size: 2rem;
+
+    margin-right: 1rem;
+
+    transition: 0.3s;
 
 }
 
 
+.social-icons a:hover {
 
-/* ================= CARDS ================= */
+    background: var(--main-color);
 
+    color: #081b29;
+
+    box-shadow: 0 0 20px var(--main-color);
+
+    transform: translateY(-5px);
+
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+.heading {
+
+    text-align: center;
+
+    font-size: 4.5rem;
+
+    margin-bottom: 5rem;
+
+}
+
+
+.heading span {
+
+    color: var(--main-color);
+
+}
+
+
+/* =====================================================
+   CARD CONTAINERS
+===================================================== */
 
 .skills-container,
+
 .projects-container,
+
 .education-container,
-.certificate-container{
 
-    display:grid;
+.certificate-container {
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    display: grid;
 
-    gap:3rem;
+    grid-template-columns:
+
+        repeat(
+
+            auto-fit,
+
+            minmax(250px, 1fr)
+
+        );
+
+    gap: 3rem;
 
 }
 
 
+/* =====================================================
+   GLASSMORPHISM CARDS
+===================================================== */
 
 .skill-box,
+
 .project-box,
+
 .education-box,
+
 .certificate-box,
-.info-box{
+
+.info-box {
 
     background:
 
-    rgba(255,255,255,0.08);
+        rgba(255, 255, 255, 0.08);
 
+    backdrop-filter: blur(20px);
 
-    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
+    padding: 3rem;
 
-    padding:3rem;
+    border-radius: 2rem;
 
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
-    border-radius:2rem;
-
-
-    border:1px solid rgba(255,255,255,0.2);
-
-
-    transition:.4s;
-
+    transition: 0.4s ease;
 
 }
 
 
+/* =====================================================
+   CARD HOVER EFFECT
+===================================================== */
 
 .skill-box:hover,
-.project-box:hover,
-.education-box:hover,
-.certificate-box:hover,
-.info-box:hover{
 
-    transform:translateY(-15px);
+.project-box:hover,
+
+.education-box:hover,
+
+.certificate-box:hover,
+
+.info-box:hover {
+
+    transform: translateY(-15px);
 
     box-shadow:
 
-    0 0 25px var(--main-color);
+        0 0 25px var(--main-color),
+
+        0 0 50px rgba(0, 238, 255, 0.3);
 
 }
 
 
+/* =====================================================
+   CARD ICONS
+===================================================== */
 
 .skill-box i,
+
 .project-box i,
-.certificate-box i{
 
-    font-size:5rem;
+.certificate-box i {
 
-    color:var(--main-color);
+    font-size: 5rem;
+
+    color: var(--main-color);
 
 }
 
 
+/* =====================================================
+   CARD HEADINGS
+===================================================== */
 
 .skill-box h3,
+
 .project-box h3,
+
 .education-box h3,
-.certificate-box h3{
 
-    font-size:2.5rem;
+.certificate-box h3 {
 
-    margin:1rem 0;
+    font-size: 2.5rem;
+
+    margin: 1rem 0;
 
 }
 
 
+/* =====================================================
+   CARD TEXT
+===================================================== */
 
 .skill-box p,
+
 .project-box p,
-.education-box p{
 
-    font-size:1.5rem;
+.education-box p {
 
-    line-height:1.6;
+    font-size: 1.5rem;
 
-}
-
-
-
-/* ================= ABOUT ================= */
-
-
-.about-container{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:4rem;
+    line-height: 1.6;
 
 }
 
 
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
 
-.about-image img{
+.about-container {
 
-    width:300px;
+    display: flex;
 
-    border-radius:20px;
+    align-items: center;
 
-}
-
-
-
-.about-content{
-
-    font-size:1.7rem;
+    gap: 4rem;
 
 }
 
 
+.about-image img {
 
-.about-details{
+    width: 300px;
 
-    display:grid;
+    border-radius: 20px;
 
-    grid-template-columns:repeat(2,1fr);
+    border: 3px solid var(--main-color);
 
-    gap:2rem;
-
-    margin-top:3rem;
-
-}
-
-
-
-/* CONTACT */
-
-
-.contact-container{
-
-    display:flex;
-
-    gap:4rem;
+    box-shadow: 0 0 25px var(--main-color);
 
 }
 
 
+.about-content {
 
-form{
-
-    flex:1;
+    font-size: 1.7rem;
 
 }
 
+
+.about-content h3 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+.about-content p {
+
+    line-height: 1.7;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+/* =====================================================
+   ABOUT DETAILS
+===================================================== */
+
+.about-details {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(2, 1fr);
+
+    gap: 2rem;
+
+    margin-top: 3rem;
+
+}
+
+
+.info-box h4 {
+
+    font-size: 1.8rem;
+
+    color: var(--main-color);
+
+    margin-bottom: 0.8rem;
+
+}
+
+
+.info-box p {
+
+    font-size: 1.5rem;
+
+    margin: 0;
+
+}
+
+
+/* =====================================================
+   EDUCATION
+===================================================== */
+
+.education-box h4 {
+
+    font-size: 1.8rem;
+
+    color: var(--main-color);
+
+    margin: 1rem 0;
+
+}
+
+
+.education-box span {
+
+    font-size: 1.5rem;
+
+    color: #ccc;
+
+}
+
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+.contact-container {
+
+    display: flex;
+
+    gap: 4rem;
+
+}
+
+
+form {
+
+    flex: 1;
+
+}
 
 
 input,
-textarea{
 
-    width:100%;
+textarea {
 
-    padding:1.5rem;
+    width: 100%;
 
-    margin:1rem 0;
+    padding: 1.5rem;
 
-    background:white;
+    margin: 1rem 0;
 
-    border-radius:1rem;
+    background: white;
 
-    font-size:1.6rem;
+    color: #081b29;
 
-}
+    border-radius: 1rem;
 
-
-
-.contact-details{
-
-    font-size:1.7rem;
+    font-size: 1.6rem;
 
 }
 
 
+textarea {
 
-/* FOOTER */
-
-
-footer{
-
-    padding:3rem;
-
-    text-align:center;
-
-    background:#020b13;
+    resize: vertical;
 
 }
 
 
-footer h2{
+/* =====================================================
+   CONTACT DETAILS
+===================================================== */
 
-    font-size:3rem;
+.contact-details {
+
+    flex: 1;
+
+    font-size: 1.7rem;
 
 }
 
 
-footer p{
+.contact-details h3 {
 
-    font-size:1.5rem;
+    font-size: 2.5rem;
+
+    margin-bottom: 2rem;
 
 }
 
 
+.contact-details p {
 
-/* RESPONSIVE */
+    margin: 1.5rem 0;
+
+    line-height: 1.6;
+
+}
 
 
-@media(max-width:900px){
+.contact-details i {
 
-    #menu-icon{
-        display:block;
+    color: var(--main-color);
+
+    margin-right: 1rem;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding: 3rem;
+
+    text-align: center;
+
+    background: #020b13;
+
+}
+
+
+footer h2 {
+
+    font-size: 3rem;
+
+}
+
+
+footer p {
+
+    font-size: 1.5rem;
+
+    margin: 1rem 0;
+
+}
+
+
+.copyright {
+
+    color: #aaa;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    #menu-icon {
+
+        display: block;
+
     }
 
 
-    .navbar{
+    .navbar {
 
-        position:absolute;
-        top:100%;
-        left:0;
+        position: absolute;
 
-        width:100%;
+        top: 100%;
 
-        background:#081b29;
+        left: 0;
 
-        display:none;
+        width: 100%;
 
-    }
+        background: #081b29;
 
+        display: none;
 
-    .navbar.active{
-
-        display:block;
+        padding: 1rem 0;
 
     }
 
 
-    .navbar a{
+    .navbar.active {
 
-        display:block;
-
-        margin:2rem;
+        display: block;
 
     }
 
+
+    .navbar a {
+
+        display: block;
+
+        margin: 2rem;
+
+        font-size: 2rem;
+
+    }
 
 
     .home,
+
     .about-container,
-    .contact-container{
 
-        flex-direction:column;
+    .contact-container {
 
-        text-align:center;
+        flex-direction: column;
 
-    }
-
-
-    .home-content h1{
-
-        font-size:4rem;
+        text-align: center;
 
     }
 
 
-    .home-image img{
+    .home-content h1 {
 
-        width:250px;
-        height:250px;
+        font-size: 4rem;
+
+    }
+
+
+    .home-image img {
+
+        width: 250px;
+
+        height: 250px;
+
+    }
+
+
+    .about-image img {
+
+        width: 250px;
+
+    }
+
+
+    .about-details {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .contact-details {
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE DEVICES
+===================================================== */
+
+@media (max-width: 450px) {
+
+
+    html {
+
+        font-size: 55%;
+
+    }
+
+
+    .header {
+
+        padding: 2rem 5%;
+
+    }
+
+
+    section {
+
+        padding: 10rem 5% 2rem;
+
+    }
+
+
+    .home-content h1 {
+
+        font-size: 3.5rem;
+
+    }
+
+
+    .heading {
+
+        font-size: 3.5rem;
 
     }
 
 
 }
-body{
-    background:red !important;
-}
+```
