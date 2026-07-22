@@ -1,20 +1,140 @@
-/* ==============================
-   TYPING ANIMATION
-============================== */
+/*==========================================
+        LOADER
+==========================================*/
+
+window.addEventListener("load", function () {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+
+    }, 1200);
+
+});
+
+/*==========================================
+        MOBILE MENU
+==========================================*/
+
+const menu = document.getElementById("menu");
+const navbar = document.getElementById("navbar");
+
+menu.onclick = () => {
+
+    navbar.classList.toggle("active");
+
+    if (navbar.classList.contains("active")) {
+
+        menu.classList.remove("fa-bars");
+        menu.classList.add("fa-xmark");
+
+    } else {
+
+        menu.classList.remove("fa-xmark");
+        menu.classList.add("fa-bars");
+
+    }
+
+};
+
+document.querySelectorAll("#navbar a").forEach(link => {
+
+    link.onclick = () => {
+
+        navbar.classList.remove("active");
+
+        menu.classList.remove("fa-xmark");
+        menu.classList.add("fa-bars");
+
+    }
+
+});
+
+/*==========================================
+        ACTIVE NAVIGATION
+==========================================*/
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+
+        if (window.scrollY >= sectionTop) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/*==========================================
+        STICKY HEADER
+==========================================*/
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 80) {
+
+        header.style.background = "rgba(8,27,41,.95)";
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.35)";
+
+    } else {
+
+        header.style.background = "rgba(8,27,41,.85)";
+        header.style.boxShadow = "none";
+
+    }
+
+});
+
+/*==========================================
+        TYPING EFFECT
+==========================================*/
+
+const typing = document.getElementById("typing");
 
 const words = [
+
     "Software Developer",
+
     "Web Developer",
+
     "Python Programmer",
-    "C Programmer",
-    "Full Stack Learner"
+
+    "Frontend Developer",
+
+    "Problem Solver"
+
 ];
 
 let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
-
-const typing = document.getElementById("typing");
 
 function typeEffect() {
 
@@ -22,7 +142,9 @@ function typeEffect() {
 
     if (!deleting) {
 
-        typing.textContent = currentWord.substring(0, charIndex++);
+        typing.textContent = currentWord.substring(0, charIndex);
+
+        charIndex++;
 
         if (charIndex > currentWord.length) {
 
@@ -31,11 +153,14 @@ function typeEffect() {
             setTimeout(typeEffect, 1200);
 
             return;
+
         }
 
     } else {
 
-        typing.textContent = currentWord.substring(0, charIndex--);
+        typing.textContent = currentWord.substring(0, charIndex);
+
+        charIndex--;
 
         if (charIndex < 0) {
 
@@ -59,12 +184,11 @@ function typeEffect() {
 
 typeEffect();
 
+/*==========================================
+        DARK MODE
+==========================================*/
 
-/* ==============================
-   DARK / LIGHT MODE
-============================== */
-
-const themeBtn = document.getElementById("theme-btn");
+const themeBtn = document.getElementById("themeBtn");
 
 themeBtn.onclick = () => {
 
@@ -75,129 +199,32 @@ themeBtn.onclick = () => {
         themeBtn.classList.remove("fa-moon");
         themeBtn.classList.add("fa-sun");
 
+        document.documentElement.style.setProperty("--bg","#f5f5f5");
+        document.documentElement.style.setProperty("--card","#ffffff");
+        document.documentElement.style.setProperty("--primary","#0077ff");
+
+        document.body.style.background="#f5f5f5";
+        document.body.style.color="#111";
+
     } else {
 
         themeBtn.classList.remove("fa-sun");
         themeBtn.classList.add("fa-moon");
 
-    }
+        document.documentElement.style.setProperty("--bg","#081b29");
+        document.documentElement.style.setProperty("--card","#112e42");
+        document.documentElement.style.setProperty("--primary","#00bfff");
 
-};
-
-
-/* ==============================
-   MOBILE MENU
-============================== */
-
-const menuBtn = document.getElementById("menu-btn");
-
-const navbar = document.getElementById("navbar");
-
-menuBtn.onclick = () => {
-
-    navbar.classList.toggle("active");
-
-    if (navbar.classList.contains("active")) {
-
-        menuBtn.classList.remove("fa-bars");
-
-        menuBtn.classList.add("fa-xmark");
-
-    } else {
-
-        menuBtn.classList.remove("fa-xmark");
-
-        menuBtn.classList.add("fa-bars");
+        document.body.style.background="#081b29";
+        document.body.style.color="#fff";
 
     }
 
 };
 
-
-/* ==============================
-   CLOSE MENU WHEN CLICKING LINK
-============================== */
-
-document.querySelectorAll("#navbar a").forEach(link => {
-
-    link.onclick = () => {
-
-        navbar.classList.remove("active");
-
-        menuBtn.classList.remove("fa-xmark");
-
-        menuBtn.classList.add("fa-bars");
-
-    };
-
-});
-
-
-/* ==============================
-   ACTIVE NAVIGATION
-============================== */
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll("header nav a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 120;
-
-        if (pageYOffset >= sectionTop) {
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") == "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* ==============================
-   STICKY HEADER
-============================== */
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 80) {
-
-        header.style.background = "rgba(8,27,41,0.95)";
-        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.3)";
-
-    } else {
-
-        header.style.background = "rgba(0,0,0,.3)";
-        header.style.boxShadow = "none";
-
-    }
-
-});
-
-
-/* ==============================
-   SCROLL REVEAL ANIMATION
-============================== */
+/*==========================================
+        SCROLL REVEAL
+==========================================*/
 
 const observer = new IntersectionObserver(entries => {
 
@@ -205,7 +232,7 @@ const observer = new IntersectionObserver(entries => {
 
         if (entry.isIntersecting) {
 
-            entry.target.classList.add("show");
+            entry.target.classList.add("active");
 
         }
 
@@ -213,22 +240,21 @@ const observer = new IntersectionObserver(entries => {
 
 }, {
 
-    threshold: 0.2
+    threshold:0.2
 
 });
 
-document.querySelectorAll("section").forEach(section => {
+document.querySelectorAll("section").forEach(sec => {
 
-    section.classList.add("hidden");
+    sec.classList.add("fade-up");
 
-    observer.observe(section);
+    observer.observe(sec);
 
 });
 
-
-/* ==============================
-   CONTACT FORM
-============================== */
+/*==========================================
+        CONTACT FORM
+==========================================*/
 
 const form = document.querySelector("form");
 
@@ -236,48 +262,75 @@ form.addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    alert("Thank you for contacting me!\n\nI will get back to you soon.");
+    alert("✅ Thank you for contacting me!\n\nI will get back to you soon.");
 
     form.reset();
 
 });
 
+/*==========================================
+        SCROLL TO TOP BUTTON
+==========================================*/
 
-/* ==============================
-   SMOOTH SCROLL
-============================== */
+const topBtn = document.createElement("button");
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+topBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 
-    anchor.addEventListener("click", function(e){
+topBtn.id = "topBtn";
 
-        e.preventDefault();
+document.body.appendChild(topBtn);
 
-        document.querySelector(this.getAttribute("href"))
-        .scrollIntoView({
+topBtn.style.position = "fixed";
+topBtn.style.bottom = "30px";
+topBtn.style.right = "30px";
+topBtn.style.width = "50px";
+topBtn.style.height = "50px";
+topBtn.style.border = "none";
+topBtn.style.borderRadius = "50%";
+topBtn.style.cursor = "pointer";
+topBtn.style.display = "none";
+topBtn.style.background = "#00bfff";
+topBtn.style.color = "#fff";
+topBtn.style.fontSize = "20px";
+topBtn.style.boxShadow = "0 0 15px rgba(0,191,255,.5)";
+topBtn.style.zIndex = "999";
 
-            behavior:"smooth"
+window.addEventListener("scroll",()=>{
 
-        });
+    if(window.scrollY>300){
+
+        topBtn.style.display="block";
+
+    }else{
+
+        topBtn.style.display="none";
+
+    }
+
+});
+
+topBtn.onclick=()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
 
     });
 
-});
+};
 
+/*==========================================
+        CURRENT YEAR
+==========================================*/
 
-/* ==============================
-   PRELOADER
-============================== */
+const copyright=document.querySelector(".copyright");
 
-window.addEventListener("load", () => {
+if(copyright){
 
-    document.body.classList.add("loaded");
+    copyright.innerHTML="© "+new Date().getFullYear()+" Mogili Venkata Gayathri. All Rights Reserved.";
 
-});
+}
 
-
-/* ==============================
-   CONSOLE MESSAGE
-============================== */
-
-console.log("Portfolio Developed by Mogili Venkata Gayathri");
+console.log("Portfolio Loaded Successfully");
