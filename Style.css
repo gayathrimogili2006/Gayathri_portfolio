@@ -697,3 +697,34 @@ nav a{
 }
 
 }
+
+.about-details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.detail-box{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    transition:.4s;
+    border-left:4px solid var(--main);
+}
+
+.detail-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 15px rgba(0,171,240,.4);
+}
+
+.detail-box h4{
+    color:var(--main);
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.detail-box p{
+    font-size:15px;
+    line-height:1.6;
+}
