@@ -1,293 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mogili Venkata Gayathri | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>Mogili Venkata Gayathri | Portfolio</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-<nav>
+    <a href="#" class="logo">Gayathri</a>
 
-<h2 class="logo">Gayathri</h2>
+    <nav id="navbar">
 
-<ul>
+        <a href="#home">Home</a>
 
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#achievements">Achievements</a></li>
-<li><a href="#languages">Languages</a></li>
-<li><a href="#contact">Contact</a></li>
+        <a href="#about">About</a>
 
-</ul>
+        <a href="#skills">Skills</a>
 
-<button id="darkMode">
-<i class="fa-solid fa-moon"></i>
-</button>
+        <a href="#projects">Projects</a>
 
-</nav>
+        <a href="#education">Education</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <div class="header-icons">
+
+        <i class="fas fa-moon" id="theme-btn"></i>
+
+        <i class="fas fa-bars" id="menu-btn"></i>
+
+    </div>
 
 </header>
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
-<section class="hero" id="home">
+<section class="home" id="home">
 
-<div class="hero-text">
+<div class="home-content">
 
-<h1>Hello, I'm</h1>
+<h3>Hello, I'm</h3>
 
-<h2>Mogili Venkata Gayathri</h2>
+<h1>Mogili Venkata Gayathri</h1>
 
-<h3>Aspiring Software Developer</h3>
+<h2><span id="typing"></span></h2>
 
 <p>
-Passionate about C, Java, Python and Web Development.
-Always eager to learn new technologies.
+
+Motivated Computer Science Engineering student passionate
+about Programming, Web Development and Software Development.
+
 </p>
 
 <div class="buttons">
 
-<a href="resume.pdf" download class="btn">
+<a href="#contact" class="btn">
+Hire Me
+</a>
+
+<a href="resume.pdf" class="btn2" download>
+
 Download Resume
-</a>
-
-<a href="https://linkedin.com/in/your-linkedin"
-target="_blank"
-class="btn2">
-
-LinkedIn
 
 </a>
 
 </div>
 
+<div class="social-icons">
+
+<a href="https://github.com/gayathrimogili2006" target="_blank">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+<a href="https://www.linkedin.com/in/gayathri-mogili-84794832/" target="_blank">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="mailto:gayathrimogali@gmail.com">
+
+<i class="fas fa-envelope"></i>
+
+</a>
+
 </div>
 
-<div class="hero-image">
-    <img src="gayathri-photo.jpeg"
-         alt="Mogili Venkata Gayathri"
-         class="profile-image">
+</div>
+
+<div class="home-image">
+
+<img src="profile.jpg" alt="Profile">
+
 </div>
 
 </section>
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
-<section id="about">
+<section class="about" id="about">
 
-<h2>About Me</h2>
+<h2 class="heading">
+
+About <span>Me</span>
+
+</h2>
+
+<div class="about-container">
+
+<div class="about-image">
+
+<img src="profile.jpg">
+
+</div>
+
+<div class="about-content">
+
+<h3>Software Developer</h3>
 
 <p>
 
-I am a Computer Science Engineering student passionate about
-software development, problem solving and creating innovative web
-applications. I enjoy learning new technologies and building
-projects that make an impact.
+I am a Computer Science Engineering student with a strong
+interest in software development and full stack web
+development. I enjoy learning new technologies, solving
+coding problems, and building creative applications.
 
 </p>
 
-</section>
+<div class="about-details">
 
-<!-- SKILLS -->
+<div>
 
-<section id="skills">
+<h4>Name</h4>
 
-<h2>Skills</h2>
+<p>Mogili Venkata Gayathri</p>
 
-<div class="cards">
+</div>
 
-<div class="card">C</div>
+<div>
 
-<div class="card">Java</div>
+<h4>Email</h4>
 
-<div class="card">Python</div>
+<p>gayathrimogali@gmail.com</p>
 
-<div class="card">SQL</div>
+</div>
 
-<div class="card">HTML</div>
+<div>
 
-<div class="card">CSS</div>
+<h4>Location</h4>
 
-<div class="card">JavaScript</div>
+<p>Kadapa, Andhra Pradesh</p>
+
+</div>
+
+<div>
+
+<h4>Degree</h4>
+
+<p>B.Tech CSE</p>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- PROJECTS -->
+<!-- ================= SKILLS ================= -->
 
-<section id="projects">
+<section class="skills" id="skills">
 
-<h2>Projects</h2>
+<h2 class="heading">
 
-<div class="project">
+Technical <span>Skills</span>
 
-<h3>Health & Wealth Awareness</h3>
+</h2>
 
-<p>
-Community awareness project promoting health and financial literacy.
-</p>
+<div class="skills-container">
+
+<div class="skill">
+
+<div class="info">
+
+<span>HTML</span>
+
+<span>90%</span>
 
 </div>
 
-<div class="project">
+<div class="bar">
+
+<div class="html"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="info">
+
+<span>CSS</span>
+
+<span>85%</span>
+
+</div>
+
+<div class="bar">
+
+<div class="css"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="info">
+
+<span>JavaScript</span>
+
+<span>75%</span>
+
+</div>
+
+<div class="bar">
+
+<div class="javascript"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="info">
+
+<span>Python</span>
+
+<span>80%</span>
+
+</div>
+
+<div class="bar">
+
+<div class="python"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="info">
+
+<span>C Programming</span>
+
+<span>85%</span>
+
+</div>
+
+<div class="bar">
+
+<div class="c"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="info">
+
+<span>SQL</span>
+
+<span>75%</span>
+
+</div>
+
+<div class="bar">
+
+<div class="sql"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="projects">
+
+<h2 class="heading">
+
+My <span>Projects</span>
+
+</h2>
+
+<div class="project-container">
+
+<div class="project-card">
+
+<i class="fas fa-heart"></i>
 
 <h3>MyMood Station</h3>
 
 <p>
-Mental wellness platform for mood tracking and emotional awareness.
+
+Mental well-being platform that helps users
+track moods and improve emotional awareness.
+
 </p>
 
 </div>
 
-<div class="project">
+<div class="project-card">
 
-<h3>Safe Drinking Water Awareness</h3>
+<i class="fas fa-leaf"></i>
 
-<p>
-Created awareness about hygiene and sustainable water usage.
-</p>
-
-</div>
-
-</section>
-
-<!-- CERTIFICATIONS -->
-
-<section id="certifications">
-
-<h2>Certifications</h2>
-
-<div class="project">
-
-<ul>
-
-<li>AWS Skills & Training – Cloud Fundamentals</li>
-
-<li>Full Stack Development Training using Java</li>
-
-<li>Quantum Fundamentals</li>
-  
-</ul>
-
-</div>
-
-</section>
-
-<!-- ACHIEVEMENTS -->
-
-<section id="achievements">
-
-<h2>Achievements</h2>
-
-<div class="project">
-
-<ul>
-
-<li>
-🏆 1st Prize in District Level PPT Presentation conducted by
-Vivekananda Kendra, Kanyakumari on
-<b>"Bharat @2047: Our Vision, Our Mission"</b>.
-</li>
-
-<br>
-
-<li>
-❤️ Volunteer in Blood Donation Camp and received a Service Certificate by Boga Parvathamma.
-</li>
-
-</ul>
-
-</div>
-
-</section>
-
-<!-- LANGUAGES -->
-
-<section id="languages">
-
-<h2>Languages Known</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Telugu</h3>
-
-<p>Read • Write • Speak</p>
-
-</div>
-
-<div class="card">
-
-<h3>English</h3>
-
-<p>Read • Write • Speak</p>
-
-</div>
-
-<div class="card">
-
-<h3>Hindi</h3>
-
-<p>Read • Write</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2>Contact Me</h2>
-
-<div class="project">
-
-<p><strong>Name:</strong> Mogili Venkata Gayathri</p>
-
-<p><strong>Email:</strong> gayathrimogali@gmail.com</p>
-
-<p><strong>Phone:</strong> +91 9704724938</p>
-
-<p><strong>Location:</strong> Kadapa, Andhra Pradesh</p>
+<h3>Health & Wealth Awareness</h3>
 
 <p>
 
-<strong>LinkedIn:</strong>
-
-<a href="https://www.linkedin.com/in/your-linkedin/" target="_blank">
-
-Visit My LinkedIn
-
-</a>
+Community awareness project promoting
+healthy lifestyle and financial literacy.
 
 </p>
 
 </div>
 
+<div class="project-card">
+
+<i class="fas fa-droplet"></i>
+
+<h3>Safe Drinking Water</h3>
+
+<p>
+
+Survey-based awareness project focusing
+on clean drinking water and hygiene.
+
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- FOOTER -->
+<!-- ================= EDUCATION ================= -->
+
+<section class="education" id="education">
+
+<h2 class="heading">
+
+Education
+
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>B.Tech (CSE)</h3>
+
+<p>SVCK</p>
+
+<p>75%</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Intermediate</h3>
+
+<p>Govt College for Girls</p>
+
+<p>70%</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>SSC</h3>
+
+<p>Nirmala English Medium High School</p>
+
+<p>98%</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+<h2 class="heading">
+
+Contact <span>Me</span>
+
+</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="7"
+placeholder="Your Message"></textarea>
+
+<button type="submit" class="btn">
+
+Send Message
+
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p>&copy; 2026 Mogili Venkata Gayathri. All Rights Reserved.</p>
+<p>
+
+© 2026 Mogili Venkata Gayathri |
+All Rights Reserved
+
+</p>
 
 </footer>
 
